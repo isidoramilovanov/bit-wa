@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from "prop-types";
 
+
 const Header = (props) => {
 
   const listIcon = () => {
@@ -17,15 +18,19 @@ const Header = (props) => {
   }
 
     return (
+      
         <nav>
         <div className="nav-wrapper">
-        <a href="#" className="brand-logo center">{props.title}</a>
-        <ul className="right hide-on-med-and-down">
-        <li><a href="collapsible.html"><i className="material-icons">refresh</i></a></li>
-        {props.changeList ? gridIcon() : listIcon()}
-        </ul>
+       <a href="#/" className="brand-logo center">{props.title}</a>
+        {(props.homePath) ? <ul className="right hide-on-med-and-down">
+        <li><a href="#/about">About</a></li>
+        <li><a href="#" onClick={props.handleRefresh}><i className="material-icons">refresh</i></a></li>
+        {props.changeList ? listIcon() : gridIcon()}
+        </ul> : <ul></ul>}
       </div>
       </nav>
+      
+ 
     )
 }
 Header.propTypes = {
