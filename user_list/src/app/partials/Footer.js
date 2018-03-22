@@ -6,6 +6,7 @@ const Footer = (props) => {
         <footer className="page-footer">
         <div className="footer-copyright">
         <div className="container">{props.title}
+        <p className="grey-text text-lighten-4 right">{props.timer}</p>
         </div>
       </div>
       </footer>

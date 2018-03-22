@@ -47,15 +47,12 @@ const UserListComponent = (props) =>{
               </li>;
           };
     return (
+    <React.Fragment>
         <ul className="collection">
-        {femaleOrMaleCard()}
-    
-    </ul>
-    
-       
-   
+            {femaleOrMaleCard()}
+        </ul>
+    </React.Fragment>
     )
-
 }
 
 export default UserListComponent

@@ -8,6 +8,8 @@ class User {
         this.birthday = user.dob;
         this.gender = user.gender;
     }
+
+    
 }
 
 export default User

@@ -70,3 +70,9 @@ i{
 .input-field{
   border-bottom: 1px solid grey;
 }
+
+.noPeople {
+  color : #757575;
+  padding : 250px 400px;
+  text-align: center;
+}

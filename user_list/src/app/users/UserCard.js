@@ -1,6 +1,7 @@
 import React from "react";
 
 const UserCard = props => {
+
   const email = () => {
     const emailOrigin = props.user.email;
     const separated = emailOrigin.split("@");
@@ -43,7 +44,10 @@ const UserCard = props => {
     return <div className="card blue lighten-5">{insideCard()}</div>;
   };
 
-  return <div className="col s4 m4">{femaleOrMaleCard()}</div>;
+  return   <React.Fragment>
+    
+  <div className="col s4 m4">{femaleOrMaleCard()}</div>
+  </React.Fragment>
 };
 
 export default UserCard;
