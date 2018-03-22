@@ -45,7 +45,7 @@ class Home extends Component {
         users.UsersData()
         .then((users)=>{
           this.setState({
-            usersData : users
+           filteredUsers : users
           });
         })
        
