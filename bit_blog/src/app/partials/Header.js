@@ -1,22 +1,20 @@
 import React from 'react';
 
 const Header= () =>{
-
-
   return (  
 
-    <nav className="navbar navbar-expand-md navbar-dark bg-dark">
-    <a className="navbar-brand mx-auto" href="#">RND BLG</a>
+    <nav className="navbar navbar-expand-md navbar-dark bg-info">
+    <a id ='logo' className="navbar-brand mx-auto" href="#">BIT BLOG</a>
     <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
         <ul className="navbar-nav ml-auto">
             <li className="nav-item">
                 <a className="nav-link" href="#">Home</a>
             </li>
             <li className="nav-item">
-                <a className="nav-link" href="#">Authors</a>
+                <a className="nav-link" href="#/authors">Authors</a>
             </li>
             <li className="nav-item">
-                <a className="nav-link" href="#">About</a>
+                <a className="nav-link" href="#/about">About</a>
             </li>
         </ul>
     </div>
