@@ -1,8 +1,11 @@
 import React from 'react';
-
+import Header from '../partials/Header';
+import Footer from '../partials/Footer';
 
 const About = () => {
     return (
+        <React.Fragment>
+            <Header />
         <div className='container'>
         <div className='row'>
         <div className='col'>
@@ -14,6 +17,8 @@ const About = () => {
         </div>
             </div>
             </div>
+            <Footer />
+            </React.Fragment>
     )
 }
 
