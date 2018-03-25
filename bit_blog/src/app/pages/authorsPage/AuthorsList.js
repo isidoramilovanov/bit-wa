@@ -1,24 +1,28 @@
 import React from 'react';
-import AuthorListItem from './AuthorListItem';
+import { Link } from "react-router-dom";
 
 
-const AuthorsList = () => {
-    return (
-        <div className='container'>
-            <h2 className = 'text-center' id= 'authors'>AUTHORS (6)</h2>
+
+const AuthorsList = (props) => {
+  
+    return <div className="container">
+        <h2 className="text-center" id="authors">
+          AUTHORS ({props.listOfAuthors.length})
+        </h2>
+
         <div>
-            <ul className="list-group list-group-flush">
-            <li className="list-group-item"><AuthorListItem /></li>
-            <li className="list-group-item">< AuthorListItem/></li>
-            <li className="list-group-item">< AuthorListItem/></li>
-            <li className="list-group-item">< AuthorListItem/></li>
-            <li className="list-group-item">< AuthorListItem/></li>
-            <li className="list-group-item">< AuthorListItem/></li>
-        </ul>
+          <ul className="list-group list-group-flush">
+                {props.listOfAuthors.map((author, i) => {
+                  return <li className="list-group-item" key={author.authorId}>
+                      <Link to={`/author${author.authorId}`} className="collection-item">
+                        <h4>{author.name}</h4>
+                      </Link>
+                    </li>;
+                })}
+
+          </ul>
         </div>
-        </div>
-     
-    )
+      </div>;
 }
 
 export default AuthorsList

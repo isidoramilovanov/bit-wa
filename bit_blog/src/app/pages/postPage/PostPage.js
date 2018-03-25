@@ -1,15 +1,72 @@
-import React from 'react';
+import React, {Component} from 'react';
 import BlogPost from './BlogPost';
 import BlogLinks from './BlogLinks';
+import {getOnePost} from '../../../services/getOnePost'
+import { getAllPostFromAuthor } from "../../../services/getAllPostFromAuthor";
+import { getOneAuthorData } from "../../../services/getOneAuthorData";
 
-const PostPage = () => {
-    return (
-        <React.Fragment>
-            <BlogPost />
-            <BlogLinks />
-        </React.Fragment>
-    )
+class PostPage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      post: {},
+      postsOfAuthor: [],
+      authorData: {}
+    };
+  }
+
+  getPostsFromAuthor = () => {
+    getOnePost
+      .postData(this.props.match.params.id)
+      .then(myPost => {
+        this.setState({
+          post: myPost
+        });
+        
+        return getAllPostFromAuthor.postsFromAuthor(myPost.userId);
+      })
+      .then(authorsPosts => {
+        this.setState({
+          postsOfAuthor: authorsPosts
+        });
+      });
+  };
+
+getInfoAboutAuthor = () =>{
+      getOnePost
+        .postData(this.props.match.params.id)
+        .then(myPost => {
+          this.setState({ post: myPost });
+          return getOneAuthorData.oneAuthorData(myPost.userId);
+        })
+        .then(authorInfo => {
+          this.setState({ 
+              authorData: authorInfo });
+        });
 }
+
+  componentDidMount() {
+    this.getPostsFromAuthor();
+     this.getInfoAboutAuthor()
+  }
+
+  componentWillReceiveProps = nextProps => {
+    if (nextProps.match.params.id !== this.props.match.params.id) {
+      window.location.reload();
+    }
+  };
+
+  render() {
+    
+    return (<React.Fragment>
+        <BlogPost authorPost={this.state.post} authorInfo={this.state.authorData}/>
+        <BlogLinks authorPosts={this.state.postsOfAuthor} />
+      </React.Fragment>)
+  }
+}
+
+
+
 
 export default PostPage
 

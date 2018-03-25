@@ -1,18 +1,25 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
-const BlogLinks = () => {
-    return (
-        <div className='container'>
-            <h3>3 more posts from same author</h3>
+const BlogLinks = (props) => {
+    let randomNum = Math.floor(Math.random() * 7);  
+    return <div className="container">
+        <h3>3 more posts from same author</h3>
 
-            <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-info">Title 10</a>
-                <a href="#" class="list-group-item list-group-item-info">Title 11</a>
-                <a href="#" class="list-group-item list-group-item-info">Title 12</a>
-
-            </div>
+        <div className="list-group">
+          <ul className="list-group list-group-flush">
+            {props.authorPosts
+              .slice(randomNum, randomNum+3)
+              .map(post => {
+                return (
+                  <li className="list-group-item" key={post.id}>
+                    <Link to={`/posts/${post.id}`}>{post.title}</Link>
+                  </li>
+                );
+              })}
+          </ul>
         </div>
-    )
+      </div>;
 }
 
 export default BlogLinks
