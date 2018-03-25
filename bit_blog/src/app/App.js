@@ -7,6 +7,7 @@ import AuthorsPage from './pages/authorsPage/AuthorsPage';
 import AuthorInfoPage from './pages/authorInfoPage/AuthorInfoPage';
 import Header from './partials/Header';
 import Footer from './partials/Footer';
+import NewPostPage from './pages/newPostPage/NewPostPage';
 
 
 
@@ -21,6 +22,7 @@ class App extends Component {
           <Route path='/about' component={AboutPage} />
           <Route exact path='/authors' component={AuthorsPage} />
           <Route path='/authors/1' component={AuthorInfoPage} />
+          <Route path='/posts/new' component={NewPostPage} />
         </Switch>
         <Footer />
       </React.Fragment>
