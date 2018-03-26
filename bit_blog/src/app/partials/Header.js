@@ -3,7 +3,7 @@ import React from 'react';
 const Header= () =>{
   return (  
 
-    <nav className="navbar navbar-expand-md navbar-dark bg-info">
+    <nav className="navbar navbar-expand-md navbar-dark bg-info colorHeaderAndFooter">
     <a id ='logo' className="navbar-brand mx-auto" href="#">BIT BLOG</a>
     <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
         <ul className="navbar-nav ml-auto">

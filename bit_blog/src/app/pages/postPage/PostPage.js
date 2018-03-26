@@ -39,9 +39,9 @@ getInfoAboutAuthor = () =>{
           this.setState({ post: myPost });
           return getOneAuthorData.oneAuthorData(myPost.userId);
         })
-        .then(authorInfo => {
+        .then(authorInformation => {
           this.setState({ 
-              authorData: authorInfo });
+              authorData: authorInformation });
         });
 }
 
@@ -58,10 +58,10 @@ getInfoAboutAuthor = () =>{
 
   render() {
     
-    return (<React.Fragment>
+    return (<div className='container'>
         <BlogPost authorPost={this.state.post} authorInfo={this.state.authorData}/>
         <BlogLinks authorPosts={this.state.postsOfAuthor} />
-      </React.Fragment>)
+      </div>)
   }
 }
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import AuthorInfoPost from './AuthorInfoPost';
-import {getOneAuthorData} from '../../../services/getOneAuthorData'
+import {getOneAuthorData} from '../../../services/getOneAuthorData';
 
 class AuthorInfoPage extends Component {
   constructor(props) {
