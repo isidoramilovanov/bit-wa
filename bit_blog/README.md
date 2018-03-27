@@ -3,30 +3,47 @@ This is the structure of our application:
 
 -node_modules
 -public
+  *favicon.ico
+  *index.html
+  *manifest.json
 -src
   -app
-    -App.js
-    -Home
-      *Home.js
-      *PostListItem.js
-    -PostPage
-      *BlogPost.js
+   -pages
+    -aboutPage
+      *AboutPage.js
+    -authorInfoPage
+      *AuthorInfoPage.js
+      *AuthorInfoPost.js
+    -authorsPage
+      *AuthorsList.js
+      *AuthorsPage.js
+    -homePage
+      *HomePage.js
       *PostList.js
-    -Authors
-      *Authors.js
-    -AuthorPage
-      *AuthorPage.js
-    -About
-      *About.js
-    -SharedPartials  
-      *Header.js
-      *Footer.js
+    -newPostPage
+      *NewPostPage.js
+    -postPage
+      *BlogLinks.js
+      *BlogPost.js
+      *PostPage.js
+  -partials
+    *Header.js
+    *Footer.js
+  *App.js
   -entities
-    *Post.js
     *Author.js
+    *Post.js
+  -photos
+    *color-pencil.jpeg
   -services
-    
+    *addNewPost.js
+    *getAllPostFromAuthor.js
+    *getAllPosts.js
+    *getAuthorsData.js
+    *getOneAuthorData.js
+    *getOnePost.js
   -shared
-  
--index.js
--index.css  
+  *App.test.js
+  *index.css
+  *index.js
+  *registerServiceWorker.js
